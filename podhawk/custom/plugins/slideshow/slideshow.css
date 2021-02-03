@@ -1,0 +1,67 @@
+body#slideshow p.intro {
+margin-bottom: 10px;
+}
+
+body#slideshow div#content table { 
+width: 700px;
+table-layout: fixed;
+}
+
+body#slideshow div#content table td {
+vertical-align: top;
+}
+
+body#slideshow div#content th { padding-top: 30px; }
+
+body#slideshow input[type=text],
+body#slideshow select
+{ width: 170px; }
+
+body#slideshow input.narrow {
+width: 75px;
+}
+
+body#slideshow td.right {
+width: 230px;
+padding: 5px;
+color: #E31A27;
+font-size: 0.9em;
+}
+
+body#slideshow td.left,
+body#slideshow th.left { width: 170px; }
+
+body#slideshow textarea {
+width: 250px;
+margin: 0px 10px;
+}
+
+body#slideshow input[type=submit], button#runSlideshow{
+	margin-top: 10px;
+	font-size: 14px;
+	}
+
+#upload_folder_contents{
+margin-top: 15px;
+}
+
+#slideshow_files_in_posts{
+margin-top: 10px;
+}
+
+#upload_folder_contents table td.left, #slideshow_files_in_posts table td.left {
+width: 400px;
+}
+
+body#slideshow button#addRow, button.remove {
+	width:200px;
+	height: 25px;
+}
+
+body#slideshow #content input[type=submit], button#runSlideshow {
+width: 200px;
+height: 30px;
+font-size: 12px;
+-webkit-appearance: button;
+color: #E3426D;
+}

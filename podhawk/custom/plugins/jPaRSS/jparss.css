@@ -1,0 +1,19 @@
+/* stylesheet for display of feed items using jPaRSS plugin
+
+jPaRSS displays the elements of the feed thus:
+ <li>
+		<span class="parss-title">[item title]</span>
+	    <span class="parss-date">[item date]</span>
+	    <span class="parss-image">[item image]</span>
+	    <span class="parss-description">[item description]</span>
+ </li>
+*/
+
+.parss-title, .parss-date, .parss-image, .parss-description {
+display: block;
+
+}
+
+.parss-image img {
+width: 100px;
+}

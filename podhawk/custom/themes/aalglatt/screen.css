@@ -1,0 +1,644 @@
+/*
+Theme Name: Aalglatt
+Theme URI: http://www.felixkrusch.de/
+Description: The Aalglatt theme by <a href="http://www.felixkrusch.de/">Felix Krusch</a> is based on the Green Marinée V1.0.1 theme by <a href="http://e-lusion.com">Ian Main</a>
+Version: 1.1
+Author: <a href="http://www.felixkrusch.de/">Felix Krusch</a>
+For the WordPress community (GPL), enjoy it guys.
+by Felix Krusch - felixkrusch.de
+*/
+
+/*
+	1) General selectors - body,h1/h3,a,blockquote,code,p
+	2) Structure - container,content,tagline
+	3) Left selectors - main,meta,comments
+	4) Right selectors - author,links,line,search,themes
+	5) Footer - extras
+	6) Forms - input,textarea
+	7) Accessibility - skip,hr
+	8) Hacks - clearfix
+*/
+
+/* 1) -=-=-=- General selectors -=-=-=- */
+
+body {
+	background: #FCFEF4;
+	margin: 68px 0 20px 0;
+	padding: 0;
+	font-family: Arial, Verdana, Helvetica;
+	font-size: 76%;
+	color: #3F3F3F;
+	text-align: center;
+	}
+/*
+h1 {
+	color: #FCFEF4;
+	margin: -35px 0 0 7px;
+	position: absolute;
+	font-size: 28px;
+	}
+*/
+
+
+h1 {
+	color: #FCFEF4;
+	margin: -45px 0 0 7px;
+	position: absolute;
+	font-size: 2.2em;
+	}
+
+
+h1 a:link, h1 a:visited {
+	color: #7DA721;
+	text-decoration: none;
+	}
+
+h1 a:hover, h1 a:active {
+	background: #78A515;
+	color: #fff;
+	text-decoration: none;
+	}
+
+h2 {
+	color: #7DA721;
+	font-weight: normal;
+	font-size: 1.8em;
+	margin: 10px 0 0 0;
+	}
+
+h2 a:link, h2 a:visited {
+	color: #7DA721;
+	font-weight: normal;
+	text-decoration: none;
+	}
+
+h2 a:hover, h2 a:active {
+	color: #3F3F3F;
+	background: none;
+	font-weight: normal;
+	text-decoration: none;
+	}
+
+h3 {
+	font-size: 1.4em;
+	margin: 20px 0 -10px 0;
+	font-weight: normal;
+	}
+
+a:link {
+	color: #78A515;
+	font-weight: bold;
+	text-decoration: none;
+	}
+
+a:visited {
+	color: #999;
+	}
+
+a:hover, a:active {
+	background: #78A515;
+	color: #fff;
+	text-decoration: none;
+	}
+
+blockquote {
+	border-left: 4px solid #3F3F3F;
+	padding: 0 10px;
+	margin: 0 0 0 10px;
+	font-style: italic;
+	}
+
+code {
+	display: block;
+	padding: 10px;
+	color: #444E1F;
+	background: #F5F8E8;
+	font-size: 1.2em;
+	border-top: 2px solid #D0EC98;
+	}
+
+p {
+	line-height: 1.4;
+	}
+
+/* 2)-=-=-=- Structure -=-=-=- */
+
+#container {
+	width: 955px;
+	margin: 0 auto;
+	text-align: left;
+	}
+
+.container_left {
+	background: url(images/container.gif) no-repeat;
+	}
+
+.container_right {
+	background: url(images/container.gif) no-repeat top right;
+	}
+
+.topline {
+	background: url(images/container_top.gif) no-repeat;
+	}
+
+#content {
+	padding-top: 30px;
+	margin: 20px;
+	width: 670px;
+	}
+
+#content_bg {
+	background: #fff url(images/container.gif) repeat-y;
+	}
+
+
+.tagline {
+	color: #888;
+	margin: -18px 0 0 9px;
+	position: absolute;
+	font-size: 1em;
+	}
+
+
+
+/* 3)-=-=-=- Left selectors -=-=-=- */	
+
+/* .main li {
+	background: url(images/content_bullet.gif) no-repeat 0 7px;
+	padding: 2px 0 0 10px;
+	list-style: none;
+	}
+
+.main ul, .main ol {
+	padding: 10px 0 10px 10px;
+	margin: 0;
+	}
+
+
+.main img {
+	padding: 3px;
+	border: 1px solid #ACE149;
+	} */
+
+
+.meta {
+	background: #F5F5F5;
+	font-size: .9em;
+	padding: 2px;
+	}
+
+.meta:hover {
+	background: #F7FEDC;
+	}
+
+.meta a:hover {
+	background: #78A515;
+	color: #fff;
+}
+
+.highlight { /* Basic highlight for text */
+	background: #F7FEDC;
+	}
+
+.comments {
+	font-size: 1.2em;
+	padding-bottom: 25px;
+	border-bottom: 3px double #eee;
+	}
+
+.comments a:link, .comments a:visited {
+	color: #78A515;
+	font-weight: bold;
+	text-decoration: none;
+	}
+
+.comments a:hover, .comments a:active {
+	background: #78A515;
+	color: #fff;
+	text-decoration: none;
+	}	
+
+.alt {
+	background: #EAF8CF !important; 
+	border: 1px solid #D5F0A4 !important;
+	padding: 10px 10px 0 10px !important;
+	}
+
+.alt:hover {
+	border: 1px solid #ACE149 !important;
+	}
+
+.commentlist li:hover {
+	border: 1px solid #ACE149;
+	}
+
+.commentlist {
+	padding: 0;
+	margin: 0;
+	}
+
+.commentlist li {
+	list-style: none;
+	padding: 10px 10px 0 10px;
+	background: #F6FCEB;
+	border: 1px solid #DEF3B6;
+	margin: 10px;
+	color: #3C452D;
+	}
+
+p.metadate {
+	font-size: .8em;
+	margin: 0;
+	text-transform: uppercase;
+	}
+
+p.comment_meta {
+	margin: 0 0 10px 10px;
+	font-size: .9em;
+	}
+
+.comment_author a:visited {
+	font-weight: bold;
+	text-decoration: none;
+	}
+
+.reply {
+	font-weight: bold;
+	font-size: 1.2em;
+	margin: 10px 0 0 10px;
+	}
+
+.warning p { /* Used on the search page (image will appear if no result is found) */
+	background: url(images/warning.gif) no-repeat left;
+	height: 160px;
+	padding: 20px 0 0 90px;
+	font-size: 1.5em;
+	margin: 0 0 0 10px;
+	}
+
+.postinput {
+	margin-left: 10px;
+	}
+
+#commentform {
+	margin-left : 10px;
+	}
+
+#commentform h3 {
+	margin-left: 0px;
+	}
+
+.flashplayer {
+	clear:left;
+}
+/*
+.postingFooter img {
+	vertical-align: middle;
+	}
+*/
+/* 4)-=-=-=- Right selectors -=-=-=- */	
+
+#right {
+	float: right;
+	width: 250px;
+	padding: 10px 15px;
+	
+	/* Box model hack used for IE5.5/5 */
+	voice-family: "\"}\""; 
+  	voice-family: inherit;
+  	width: 230px;
+	}
+
+#right h3  {
+	color: #888;
+}
+
+#right li {
+	list-style-type : none;
+}
+
+#right ul ul li {
+	background-image : none;
+	list-style-image : url(images/sub_icon.gif);
+	list-style-position : inside;
+}
+
+#author li {
+	list-style: none;
+	margin: 0;
+	padding: 0 5px 20px 0;
+	font-size: .9em;
+	line-height: 1.4;
+	}
+
+#author ul {
+	padding: 20px 0 0 0;
+	margin: 0;
+	}
+
+#calendar {
+	margin-left: 5px;
+}	
+#calendar table  {
+	width: 100%;
+}
+.center  {
+text-align: center;
+}
+
+#links li {
+	list-style: none;
+	background: url(images/links_bullet.gif) no-repeat 0 4px;
+	padding: 2px 0 2px 20px;
+	}
+
+#links li li {
+	background: url(images/sub_icon.gif) no-repeat 0 4px;
+	padding: 2px 0 2px 13px;
+	font-size: 1em !important;
+	}
+	
+#links li li li {
+	background: url(images/sub_icon.gif) no-repeat 0 5px;
+	padding: 3px 0 2px 13px;
+	font-size: 1em !important;
+	}
+
+#links ul {
+	padding: 10px;
+	margin: 5px;
+	}
+
+#links ul ul {
+	padding: 0 !important;
+	margin: 2px 0 0 0 !important;
+	}
+
+#links ul ul ul {
+	padding: 0 !important;
+	margin: 0 0 -4px 0 !important;
+	}
+
+#links a {
+	font-size: .9em;
+	text-decoration: none;
+	}
+
+#links a:link {
+	color: #565D4A;
+	font-weight: normal;
+	}
+
+#links a:visited {
+	color: #aaa;
+	}
+
+#links a:hover, #links a:active {
+	background: #80BE14;
+	color: #fff;
+	}
+
+#links #calendar a:link, #links #calendar a:visited {
+	font-size: 1em;
+	color: #78A515;
+	text-decoration: none;
+}
+
+#links #calendar a:hover {
+	font-size: 1em;
+	background: #78A515;
+	color: #fff;
+	text-decoration: none;
+}
+
+#links #calendar .today {
+	background: #FFE3CD;
+	}
+
+.line {
+	border-top: 3px solid #ACE149;
+	margin-top: -5px;
+	}
+
+#search {
+	background: url(images/search.gif) no-repeat;
+	height: 56px;
+	margin: 0 auto;
+	padding-top: 22px;
+	}
+
+#search h3 {
+	font-size: 1.4em;
+	margin: 20px 0 -10px 0;
+	font-weight: normal;
+	}
+
+p.searchinfo {
+	margin: 2px 0 -8px 2px;
+	font-size: .9em;
+	color: #999;
+	}
+
+.searchfield {
+	background: #fff;
+	border: 1px solid #ACE149;
+	color: #7DA721;
+	padding: 2px 5px 1px 5px;
+	width: 160px;
+	}
+
+.searchfield:hover {
+	border: 1px solid #BFBFBF;
+	color: #949494;
+	}
+
+.submit {
+	background: url(images/search_submit.gif) no-repeat;
+	height: 20px;
+	width: 52px;
+	border: 0;
+	margin-left: 2px;
+	text-indent: -9999px;
+	cursor: pointer;
+	}
+
+.submit:hover {
+	background: url(images/search_submit.gif) no-repeat 0 -20px;
+	height: 20px;
+	width: 52px;
+	border: 0;
+	margin-left: 2px;
+	cursor: pointer;
+	}
+
+.themes {
+	font-size: .9em;
+	}
+
+/* 5)-=-=-=- Footer -=-=-=- */	
+
+#footer {
+	background: url(images/footer.gif) no-repeat;
+	height: 75px;
+	clear : both;
+	}
+
+#footer p {
+	padding: 30px 0 0 70px;
+	float: left;
+	text-transform: uppercase;
+	font-size: .8em;
+	color: #bbb;
+	}
+
+.extras {
+	float: right;
+	padding: 33px 18px 0 0;
+	}
+
+.extras a {
+	text-decoration: none;
+	font-weight: bold;
+	}
+
+.extras a:link, .extras a:visited {
+	background: #ccc;
+	color: #fff;
+	padding: 5px;
+	border: 2px solid #fff;
+	}
+
+
+.extras a:hover, .extras a:active {
+	background: #DEEEA4;
+	color: #7AB90C;
+	padding: 5px;
+	border: 2px solid #C9E979;
+	}
+
+.extras li {
+	display: inline;
+	}
+
+.extras ul {
+	padding: 0 0 10px 0;
+	margin: 0;
+	}
+.navigation img {
+	border : none;
+}
+
+.navigation p {
+	text-align: center;
+	}
+
+/* 6)-=-=-=- Forms -=-=-=- */
+
+input {
+	border: 1px solid #BFBFBF;
+	color: #949494;
+	background: #fff;
+	padding: 2px 5px 1px 5px;
+	font-size: 1em;
+	}
+
+input:hover {
+	background: #fff;
+	border: 1px solid #ACE149;
+	color: #7DA721;
+	font-size: 1em;
+	}
+
+textarea {
+	font-family: Arial, Verdana, Helvetica;
+	font-size: 1.1em;
+	border: 1px solid #BFBFBF;
+	color: #949494;
+	padding: 2px 5px 1px 5px;
+	width: 450px;
+	}
+
+textarea:hover {
+	background: #fff;
+	border: 1px solid #ACE149;
+	color: #7DA721;
+	}
+
+#commentform input[type="text"] {
+	width: 250px;
+	}
+
+#commentform input[type="submit"] {
+	width: 200px;
+	}
+
+#commentform textarea {
+	width: 400px;
+	}
+
+/* 7)-=-=-=- Accessibility -=-=-=- */
+
+#skip {
+	display: none;
+	}
+
+hr { /* Simple style when CSS not in use */
+	display: none;
+	}
+
+/* 8)-=-=-=- Hacks -=-=-=- */
+
+.clearfix:after { /* float hack used to float content correctly */
+    content: "."; 
+   	display: block; 
+   	height: 0; 
+   	clear: both; 
+    visibility: hidden;
+	}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+/* End hide from IE-mac */
+
+/* 9)-=-=-=-Tagweights-=-=-=-=*/
+
+#right .tagweight1 a {
+   font-size : 80%;
+ }
+#right .tagweight2 a {
+   font-size : 100%;
+   font-weight : bold;
+ }
+#right  .tagweight3 a {
+   font-size : 130%;
+ }
+ #right .tagweight4 a{
+   font-size : 130%;
+   font-weight : bold;
+   
+ }
+#right .tagweight5 a{
+    font-size : 150%;
+    font-weight : bold;
+  }
+
+/*  search  */
+table input#search-input  {
+	width: 90%;
+}
+td#this_site {
+	font-size: 0.9em;
+}
+/* posting footer */
+p.postingFooter a {
+	text-decoration: none;
+	background: #FFFFFF;
+	color: #78A515;
+	font-weight: bold;
+	margin: 0px;
+	border: 0px;
+}
+
+p.postingFooter img {	
+	border: 0px;
+}

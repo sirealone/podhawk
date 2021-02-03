@@ -1,0 +1,36 @@
+
+-- last modified: 30 August 2012
+
+
+YOUR FIRST PODHAWK INSTALLATION
+================================
+
+1) Transfer all files and folders to the desired location on your server.
+
+2) Open "[www.your_podhawk_site.com]/install.php"  in your browser.
+
+3) Follow the instructions there.
+
+4) Delete "install.php" after a successful installation!
+
+
+
+YOU WANT TO COUNT YOUR FEED DOWNLOADS?
+======================================
+
+1) Check that you have copied the file ".htaccess" to the root directory of your PodHawk installation.
+
+2) If you can't see it - well, it's a hidden file! You may have to enable "show hidden files" in your FTP programme.
+
+3) It must contain the following :
+
+<<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule ^pod/(.+)$ get.php?pod=$1 [L]
+RewriteRule ^fla/(.+)$ get.php?fla=$1 [L]
+RewriteRule ^web/(.+)$ get.php?web=$1 [L]
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule .* rewrite.php [L] 
+</IfModule>

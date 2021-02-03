@@ -1,0 +1,207 @@
+#########################################################
+
+HOW TO UPDATE TO PODHAWK 1.85 FROM PODHAWK 1.83 OR 1.84
+
+#########################################################
+
+There are only a few file changes between versions 1.83/1.84 and 1.85
+
+You can if you wish follow the full update procedure set out below.
+
+Or you can replace the following files with the corresponding new files:
+
+podhawk/initialise.php
+podhawk/smarty/templates/manager_head.tpl
+podhawk/smarty/templates/manager_record2.tpl
+podhawk/inc/buildbackend.php
+podhawk/inc/TR_Classes/TR_WebpageMetatags.php
+podhawk/inc/updates/update0185.php (new file)
+
+In addition, if you are updating from PodHawk 1.83 you should replace the following files:
+
+podhawk/install/installer.php
+podhawk/install/pages.php
+podhawk/install/lang/english.php
+
+podhawk/inc/classes/Registry.php
+podhawk/inc/classes/Playlist.php
+
+podhawk/inc/DA_classes/DA_CacheClear.php
+
+podhawk/inc/backend_cats.php
+
+podhawk/inc/update/update0184.php (new file)
+
+There are no database changes in PodHawk 1.85. The version number will update automatically
+when you go to your backend pages.
+
+#########################################################
+
+HOW TO UPDATE TO PODHAWK 1.84 FROM PODHAWK 1.82, 1.81 or 1.8
+
+#########################################################
+
+1 VERY IMPORTANT - make a backup of your config.php file (may be in podhawk/custom, or in the directory level above the root of your site)
+
+2 ALSO IMPORTANT - if you have modified any templates in your theme folder, make a backup of them, as the following will overwrite them
+
+3 Replace all the files in your 'podhawk' directory with the files in the 'podhawk' directory in the files in this package. Don't try to delete the old files, just use your favourite FTP programme to overwrite them.
+
+4 Then upload your config.php file (see step 1) either to podhawk/custom or to the directory above the root of your PodHawk site. The latter is better as it is more secure.
+
+5 Then replace any modified templates which you backed up in step 2.
+
+If index.tpl is one of the files you have modified, you need to make a small change to it as follows. Open it in a text editor and find the bit which reads:
+
+	{$posting.message_html}
+
+Surround it with html <div> tags like this:
+
+	<div class="clearfloats">
+		{$posting.message_html}
+	</div>
+
+If you can't find {$posting.message_html} look for:
+
+	{include file='common:posting_body.tpl'}
+
+and place <div> tags around it in the same way.
+
+Upload the modified index.tpl file to your site.
+
+6 Finally, go to your admin pages. This will automatically make any necessary database changes.
+
+###################################################################
+
+How to update to PodHawk 1.82 from a version of PodHawk earlier than 1.8
+
+###################################################################
+
+PodHawk 1.8* contains large amounts of new and rewritten code. It is not feasible
+to update from an earlier PodHawk version simply by replacing a few files.
+
+The following update process is recommended :
+
+1. Uninstall any plugins which you have installed. Go to Manage > Plugins. For each installed plugin,
+click on "Edit status and settings". Make a note of any information which you may need to re-install
+the plugin later eg ids, application secrets, settings etc. Then click on "Remove this plugin 
+from the database" at the bottom of the page.
+
+2. Make a backup of your database, and of your 'audio' and 'images' directories, in case of accidents.
+
+3. Make a backup of your configuration file. It is called 'config.php'. You can find it EITHER 
+in 'podhawk/custom', OR in the directory level above the root of your site.
+Download the backup to your computer.
+
+4.  If your site uses a modified or custom-built theme, you need to make a backup of
+the folder in 'podhawk/custom/themes' which you contains your theme.
+
+5. Go to your backend settings page. In the sidebar there is a button you can click 
+to make the cache directories of your PodHawk installation removable. Click it.
+
+6. Optionally, you can temporarily replace the file index.php in the PodHawk root
+directory with this :
+
+<?php
+
+echo "I am updating this site. Please come back later.";
+
+?>
+
+7. Replace 'get.php' and 'rewrite.php' in your PodHawk root directory. Also, replace or re-install
+'install.php'. Optionally, you can replace the .htaccess file in the root directory.
+
+8. Delete the 'podhawk' directory and everything in it. (Yes, I mean it!) Go and make some coffee
+- this will take some time. (HOWEVER, if you have an SQLite database - read the important note below!!)
+
+9. Upload the new 'podhawk' directory and its contents from these PodHawk 1.82 files.
+
+10. Point your web browser at http://[YOUR PODHAWK URL]/install.php. On the first page, choose the
+third option, to upgrade to PodHawk 1.83.
+
+11. Follow the instructions on the screen. You will probably need to change the permissions on
+some of your directories, using an FTP programme or your site control panel (exactly
+as you did when you first installed PodHawk.) The programme will create some new cache
+directories which it needs, and will automatically update your database. It will prompt
+you to re-install your config.php file.
+
+12. Then re-install your modified or custom theme folder, if you need to.
+You will need to make the following changes to your index.tpl file
+
+	- replace {include file='head.tpl'} with {include file='common:head.tpl'}
+	- similarly, replace {include file='flashplayer.tpl'} with {include file='common:flashplayer.tpl'}
+
+If your sidebar contains an RSS reader, you will need to remove it, because PodHawk 1.8 no
+longer supports the magpierss programme. Instead, enable the jPARRs Feed Reader plugin, and follow the
+instructions on the plugin page for how to add it to your template.
+
+14. Re-install and configure any plugins which you want to use.
+
+15. Delete 'install.php' from the root directory of your site.
+
+15. That's all. Happy podcasting!
+
+## SQLite ##
+
+If you have an SQLite database, you must take care that it is not deleted when you delete the rest of the 
+'podhawk' directory. The SQLite database is a file called 'loudblogdata.db' in the directory 'podhawk/custom/sqlite' 
+(except in some old former Loudblog installations where it will be in the 'audio' directory.) Instead of deleting the
+whole of the 'podhawk' directory, you should :
+- open 'podhawk' and delete everything except the 'custom' directory
+- open the 'podhawk/custom' directory, and delete everything except the 'podhawk/custom/sqlite' directory.
+
+###########################################################	 
+
+How to convert your LoudBlog installation to PodHawk 1.83
+
+###########################################################
+
+One :
+
+in case you make a mistake and accidentally delete something important,
+back-up your LoudBlog database and audio files (in the audio/ directory).
+
+Two :
+
+this is IMPORTANT. Find the file loudblog/custom/config.php and back it up on your desktop computer.
+Then make another copy, just to be sure.
+
+Three :
+
+backup anything else which you may need in PodHawk e.g. images used in your postings
+or in your template. This is important, because the following steps may delete them.
+
+Four :
+
+from the PodHawk files, upload the folder 'podhawk' and all its contents to your LoudBlog site.
+Place it in the root directory (ie alongside the 'loudblog', 'audio' and 'upload' folders).
+
+Five :
+
+replace the following loudblog files (in the root directory) with the podhawk
+files with the same name:
+	get.php
+	index.php
+	podcast.php
+	.htaccess
+
+If you do not already have a directory "images/" in the root directory, create it.
+
+Add these files to the root directory:
+	rewrite.php
+	install.php
+	xd_receiver.htm
+	xd-receiver.html (which is empty!)
+
+Six :
+
+run the install.php programme ('your-site-url/install.php') and select 
+'Convert an existing LoudBlog installation to PodHawk' on page 1.
+
+Seven :
+- after installation, delete install.php from your site.
+
+Eight :
+- check that your new PodHawk site works. Then delete the 'loudblog' directory and its contents from the root directory.
+
+

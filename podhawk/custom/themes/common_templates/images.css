@@ -1,0 +1,97 @@
+/*---Style Sheet for use with Loudblog Images Manager ------
+Place this style sheeet in your template directory
+Link to it by adding the following to the head section of your template,
+BELOW the link to your main css file:
+
+<link rel="stylesheet" media="screen" href="images.css" type="text/css" />
+
+Peter Carter, cpetercarter@googlemail.com
+---------------------------------------------------- */
+
+/*----these instructions style your images and captions
+The classes have weird names to avoid possible conflict with classes
+already used in your template and style sheet. You can amend the instructions
+eg to add a background colour, or change the border style---*/
+
+.lb_image_right, .lb_image_left, .lb_image_center  {
+	background : white;
+	color : black;
+	padding  : 8px 8px 8px 8px;	
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-size: 0.9em;
+	line-height: 1.5em;	
+	text-align : center;
+	}
+
+p.lb_no_margins {
+	margin : 0 0 0 0;
+	}
+
+.lb_image_right  {
+	margin : 0 0 10px 7px;
+	float : right;
+	display : inline-block;	
+	}
+
+.lb_image_left {
+	margin: 0 7px 10px 0;
+	float : left;
+	display : inline-block;
+	}
+
+.lb_image_right:after, .lb_image_left:after { /* float hack used to float content correctly */
+    content: "."; 
+   	display: block; 
+   	height: 0; 
+   	clear: both; 
+    visibility: hidden;
+	}
+
+.lb_image_center  {
+	display : block;
+	margin-left : auto;
+	margin-right: auto;
+	margin-bottom : 10px;	
+	}
+
+.lb_with_border  {
+	border : 1px solid black;
+	}
+
+.lb_image_hidden {
+	visibility: hidden;
+	}
+
+/*----The following rules attempt to deal with possible problems
+of conflict with the existing style sheet. --------------------*/
+
+/*-------- ensure that images cannot extend beyond the containing element-----*/
+p img {
+	max-width : 100%;
+}
+
+/*---------remove text decoration, underlining etc from images which are used as links----*/
+.lb_image_left a, .lb_image_center a, .lb_image_right a, .lb_image_left a:hover, 
+.lb_image_center a:hover, .lb_image_right a:hover {
+	border-bottom : 0;
+	text-decoration : none;
+}
+/*--------ensure that postmetadata, or equivalent section at the end of each post, clears
+any floated images. Not now needed, as the div class="clearfloats" around the posting text 
+does the job more effectively.
+.postmetadata, .postmeta, #content .posting-footer {
+	clear : both;
+}
+*/
+
+/* sometimes the easy way to ensure that elements clear any preceding floats is this.. */
+.clearfloats {
+	overflow: hidden;
+	width: 100%;
+	}
+
+/* class for loating thumbnail images */
+.slideshowThumbnail {
+	margin: 10px 5px;
+	float: left;
+	}		
